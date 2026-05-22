@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Dis Ole House Kitchen & Garden Barbados | Authentic Caribbean Dining</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Best Caribbean Restaurant in Saint Philip Barbados | Dis Ole House Kitchen & Garden - Authentic Bajan cuisine, garden dining, fresh seafood in Long Bay.">
+  <meta name="keywords" content="Caribbean restaurant Barbados, Bajan food, Saint Philip dining, garden restaurant, fresh seafood Barbados">
+  <meta name="author" content="Dis Ole House">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="Dis Ole House Kitchen & Garden - Authentic Caribbean Dining Barbados">
+  <meta property="og:description" content="Experience traditional Bajan flavors and garden dining in Long Bay, Saint Philip.">
+  <meta property="og:type" content="restaurant">
+  <meta property="og:url" content="https://www.disolehouse.com">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=1200">
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f9f8f6;
+      color: #222;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #e0dcd5; }
+    ::-webkit-scrollbar-thumb { background: #1e4620; border-radius: 10px; }
+
+    /* Container */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 28px;
+      border-radius: 40px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
+      font-size: 1rem;
+      text-decoration: none;
+      justify-content: center;
+    }
+    .btn-primary {
+      background: #1e4620;
+      color: white;
+      box-shadow: 0 4px 12px rgba(30,70,32,0.2);
+    }
+    .btn-primary:hover {
+      background: #0f2e11;
+      transform: translateY(-2px);
+    }
+    .btn-secondary {
+      background: #e67e22;
+      color: white;
+    }
+    .btn-secondary:hover {
+      background: #bf6516;
+      transform: translateY(-2px);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid #1e4620;
+      color: #1e4620;
+    }
+    .btn-outline:hover {
+      background: #1e4620;
+      color: white;
+    }
+    .btn-gold {
+      background: #f1c40f;
+      color: #1e4620;
+      font-weight: bold;
+    }
+    .btn-gold:hover {
+      background: #d4ac0d;
+      transform: translateY(-2px);
+    }
+
+    /* Section Titles */
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 1.2rem;
+      position: relative;
+      display: inline-block;
+    }
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 0;
+      width: 70px;
+      height: 4px;
+      background: #e67e22;
+      border-radius: 4px;
+    }
+    .text-center {
+      text-align: center;
+    }
+    .flex-center {
+      display: flex;
+      justify-content: center;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+    }
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 28px;
+    }
+
+    @media (max-width: 768px) {
+      .container { padding: 0 20px; }
+      .section-title { font-size: 2rem; }
+    }
+
+    /* Floating WhatsApp */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #25D366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      z-index: 999;
+      transition: 0.2s;
+      text-decoration: none;
+    }
+    .whatsapp-float:hover { transform: scale(1.05); background: #128C7E; }
+
+    /* Mobile Sticky Call */
+    .mobile-sticky-call {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: #1e4620;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 50px;
+      font-weight: bold;
+      gap: 8px;
+      z-index: 999;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      align-items: center;
+    }
+    @media (max-width: 640px) {
+      .mobile-sticky-call { display: flex; }
+      .whatsapp-float { bottom: 20px; right: 20px; width: 50px; height: 50px; font-size: 26px; }
+    }
+
+    /* Header & Navigation */
+    .header {
+      position: sticky;
+      top: 0;
+      background: rgba(249,248,246,0.96);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+      z-index: 1000;
+      padding: 16px 0;
+    }
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #1e4620;
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #222;
+      font-weight: 500;
+      transition: 0.2s;
+      cursor: pointer;
+    }
+    .nav-links a:hover { color: #e67e22; }
+    .hamburger {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: #1e4620;
+    }
+    @media (max-width: 900px) {
+      .nav-links {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 70%;
+        height: calc(100vh - 80px);
+        background: #f9f8f6;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 40px 30px;
+        gap: 32px;
+        box-shadow: 2px 0 20px rgba(0,0,0,0.1);
+        transition: 0.3s;
+        z-index: 1000;
+      }
+      .nav-links.active { left: 0; }
+      .hamburger { display: block; }
+    }
+
+    /* Cards */
+    .service-card, .review-card, .feature-card, .dining-card {
+      background: white;
+      border-radius: 28px;
+      padding: 32px 24px;
+      box-shadow: 0 12px 24px rgba(0,0,0,0.04);
+      transition: all 0.3s;
+      border: 1px solid #f0ede8;
+    }
+    .service-card:hover, .review-card:hover, .dining-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 30px rgba(0,0,0,0.08);
+    }
+    .star-rating { color: #f1c40f; margin-bottom: 16px; font-size: 1.2rem; }
+
+    /* Hero */
+    .hero {
+      padding: 60px 0 80px;
+      background: linear-gradient(107deg, #f9f8f6 0%, #fff6ea 100%);
+    }
+    .hero-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 48px;
+      align-items: center;
+    }
+    .hero-content { flex: 1; }
+    .hero-image {
+      flex: 1;
+      border-radius: 40px;
+      overflow: hidden;
+      box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+    }
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.5s;
+    }
+    .hero-image:hover img { transform: scale(1.02); }
+    .btn-group { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 28px; }
+
+    /* Contact Form */
+    .contact-form {
+      background: white;
+      padding: 40px;
+      border-radius: 32px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.05);
+    }
+    .form-group { margin-bottom: 20px; }
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 28px;
+      border: 1px solid #e0dbd2;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      transition: 0.2s;
+    }
+    .form-group input:focus, .form-group textarea:focus {
+      outline: none;
+      border-color: #e67e22;
+      box-shadow: 0 0 0 3px rgba(230,126,34,0.1);
+    }
+    .error-msg { color: #e74c3c; font-size: 0.75rem; margin-top: 4px; }
+    .success-msg {
+      background: #1e4620;
+      color: white;
+      padding: 12px;
+      border-radius: 30px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .map-container { border-radius: 28px; overflow: hidden; height: 280px; }
+
+    /* Footer */
+    footer {
+      background: #1e2a1c;
+      color: #f0ede5;
+      padding: 48px 0 24px;
+      margin-top: 80px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+    }
+    .footer-links a {
+      color: #ddd;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 12px;
+      cursor: pointer;
+    }
+    .footer-links a:hover { color: #e67e22; }
+    .copyright {
+      text-align: center;
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* Page Transitions */
+    .page {
+      display: none;
+      animation: fadeIn 0.4s ease;
+    }
+    .page.active-page {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <div class="container nav-container">
+    <a href="#" class="logo" data-page="home">Dis Ole House.</a>
+    <button class="hamburger" id="hamburgerBtn">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="#" data-page="home">Home</a>
+      <a href="#" data-page="about">About</a>
+      <a href="#" data-page="services">Services</a>
+      <a href="#" data-page="reviews">Reviews</a>
+      <a href="#" data-page="contact">Contact</a>
+      <a href="tel:+12462430568" class="btn btn-primary" style="padding: 10px 24px;"><i class="fas fa-phone-alt"></i> Call Now</a>
+    </div>
+  </div>
+</div>
+
+<main id="main-content">
+  <!-- HOME PAGE -->
+  <div id="home-page" class="page active-page">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <h1 style="font-size: clamp(2.2rem, 6vw, 3.5rem); font-weight: 800; line-height: 1.2;">Authentic Caribbean Dining in a Beautiful Garden Setting</h1>
+          <p style="font-size: 1.2rem; margin-top: 24px; color: #3a3a3a;">Experience traditional Bajan flavors, fresh Caribbean dishes, and unforgettable garden dining in Long Bay, Saint Philip, Barbados.</p>
+          <div class="btn-group">
+            <a href="tel:+12462430568" class="btn btn-primary"><i class="fas fa-phone-alt"></i> Call Now</a>
+            <a href="https://maps.app.goo.gl/9pKYzno8QwpPH9di8" target="_blank" class="btn btn-secondary"><i class="fas fa-map-marker-alt"></i> View Location</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=800&auto=format" alt="Caribbean garden dining at Dis Ole House">
+        </div>
+      </div>
+    </section>
+
+    <div class="container" style="margin-top: 60px;">
+      <div class="text-center">
+        <h2 class="section-title">Why Choose Us</h2>
+        <p style="max-width: 700px; margin: 24px auto 48px;">Authentic recipes passed through generations, fresh local seafood, and an enchanting botanical escape.</p>
+      </div>
+      <div class="grid-3">
+        <div class="feature-card"><i class="fas fa-utensils" style="font-size: 2.5rem; color: #e67e22; margin-bottom: 20px;"></i><h3>Authentic Caribbean Recipes</h3><p>Slow-cooked Bajan classics, pepperpot, cou-cou & flying fish.</p></div>
+        <div class="feature-card"><i class="fas fa-fish" style="font-size: 2.5rem; color: #e67e22; margin-bottom: 20px;"></i><h3>Fresh Seafood</h3><p>Daily catch, grilled lobster, and ocean-to-table dining.</p></div>
+        <div class="feature-card"><i class="fas fa-leaf" style="font-size: 2.5rem; color: #e67e22; margin-bottom: 20px;"></i><h3>Botanical Garden Dining</h3><p>Surrounded by tropical blooms and island breezes.</p></div>
+      </div>
+    </div>
+
+    <div class="container" style="margin-top: 80px; margin-bottom: 60px;">
+      <div class="text-center"><h2 class="section-title">Featured Dining Experience</h2></div>
+      <div class="grid-4" style="margin-top: 48px;">
+        <div class="dining-card"><i class="fas fa-chair" style="font-size: 2rem; color: #1e4620;"></i><h3 style="margin-top: 16px;">Dine-In Experience</h3><p>Cozy indoor seating with warm Bajan hospitality.</p></div>
+        <div class="dining-card"><i class="fas fa-tree" style="font-size: 2rem; color: #1e4620;"></i><h3>Garden Dining</h3><p>Al fresco tables under the stars and mango trees.</p></div>
+        <div class="dining-card"><i class="fas fa-users" style="font-size: 2rem; color: #1e4620;"></i><h3>Family Gatherings</h3><p>Share platters and joyful island spirit.</p></div>
+        <div class="dining-card"><i class="fas fa-heart" style="font-size: 2rem; color: #1e4620;"></i><h3>Romantic Dining</h3><p>Candlelit garden tables & sunset views.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT PAGE -->
+  <div id="about-page" class="page">
+    <div class="container" style="padding: 60px 0;">
+      <div style="max-width: 800px; margin: 0 auto;">
+        <h1 class="section-title" style="font-size: 3rem;">Our Story</h1>
+        <p style="font-size: 1.2rem; margin-top: 30px;">Dis Ole House Kitchen & Garden Barbados preserves authentic Bajan culinary traditions through slow-cooked Caribbean recipes, welcoming hospitality, and beautiful outdoor dining. Rooted in Long Bay, Saint Philip, we bring you heirloom flavors passed down for generations.</p>
+        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&auto=format" alt="Caribbean kitchen interior" style="width: 100%; border-radius: 32px; margin: 40px 0; box-shadow: 0 12px 24px rgba(0,0,0,0.1);">
+        <h2>Mission & Values</h2>
+        <p>Celebrating Bajan heritage, sustainable seafood, and creating warm memories. Our garden is an extension of our kitchen – fresh herbs, local produce, and the rhythm of island life.</p>
+        <div style="margin-top: 40px; background: #fff2e6; padding: 30px; border-radius: 28px;">
+          <h3>Caribbean Heritage</h3>
+          <p>From fish fry to coconut bread, every dish tells a story of Barbados. We honor the traditions of our grandmothers and the bounty of our island.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES PAGE -->
+  <div id="services-page" class="page">
+    <div class="container" style="padding: 60px 0;">
+      <div class="text-center"><h1 class="section-title">Our Services</h1><p style="margin-bottom: 48px;">Exceptional dining, events & takeaway</p></div>
+      <div class="grid-3">
+        <div class="service-card"><i class="fas fa-egg" style="font-size: 2.2rem; color: #e67e22;"></i><h3>Authentic Caribbean Dining</h3><p>Fresh seafood, local cuisine, traditional dishes & signature flavors. Try our jerk chicken, rice & peas, and fried plantains.</p></div>
+        <div class="service-card"><i class="fas fa-calendar-alt" style="font-size: 2.2rem; color: #e67e22;"></i><h3>Private Garden Events</h3><p>Birthdays, small receptions, family dinners, private celebrations tailored to your needs. Enchanting tropical backdrop.</p></div>
+        <div class="service-card"><i class="fas fa-shopping-bag" style="font-size: 2.2rem; color: #e67e22;"></i><h3>Takeaway & Collection</h3><p>Quick pickup, fresh meals, convenient ordering. Taste the garden at home.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REVIEWS PAGE -->
+  <div id="reviews-page" class="page">
+    <div class="container" style="padding: 60px 0;">
+      <div class="text-center"><h1 class="section-title">Guest Reviews</h1><p>What our guests say about the garden experience</p></div>
+      <div class="grid-3" style="margin-top: 40px;">
+        <div class="review-card"><div class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p style="font-style: italic; margin: 16px 0;">"The best authentic Bajan food we had on the island! The garden atmosphere is magical and the flying fish sandwich is to die for."</p><h4>— Maria S.</h4></div>
+        <div class="review-card"><div class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p style="font-style: italic; margin: 16px 0;">"Incredible service, fresh seafood platter, and rum punch. Dis Ole House is a hidden gem in Saint Philip."</p><h4>— David L.</h4></div>
+        <div class="review-card"><div class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p style="font-style: italic; margin: 16px 0;">"We celebrated our anniversary in the garden. Romantic, delicious, and staff went above and beyond."</p><h4>— Chantelle W.</h4></div>
+        <div class="review-card"><div class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p style="font-style: italic; margin: 16px 0;">"Authentic Caribbean cooking with generous portions. The pepperpot stew took me back to grandma's kitchen."</p><h4>— Ryan P.</h4></div>
+        <div class="review-card"><div class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p style="font-style: italic; margin: 16px 0;">"Beautiful setting, friendly vibes, everything from macaroni pie to grilled lobster was perfection."</p><h4>— Sophia B.</h4></div>
+      </div>
+      <div class="flex-center" style="margin-top: 48px;">
+        <a href="https://maps.app.goo.gl/9pKYzno8QwpPH9di8" target="_blank" class="btn btn-secondary"><i class="fab fa-google"></i> View Google Reviews</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT PAGE -->
+  <div id="contact-page" class="page">
+    <div class="container" style="padding: 60px 0;">
+      <div class="text-center"><h1 class="section-title">Reserve Your Table</h1><p>Contact us for garden dining, events or takeaway.</p></div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 48px; margin-top: 48px;">
+        <div>
+          <div style="background: white; border-radius: 32px; padding: 30px; margin-bottom: 30px;">
+            <h3><i class="fas fa-store"></i> Dis Ole House Kitchen & Garden</h3>
+            <p><i class="fas fa-map-pin"></i> Long Bay, Saint Philip, Barbados</p>
+            <p><i class="fas fa-phone"></i> +1 246-243-0568</p>
+            <div class="btn-group" style="margin-top: 20px;">
+              <a href="tel:+12462430568" class="btn btn-primary"><i class="fas fa-phone"></i> Call Now</a>
+              <a href="https://wa.me/12462430568" class="btn btn-secondary" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+              <a href="https://maps.app.goo.gl/9pKYzno8QwpPH9di8" class="btn btn-outline" target="_blank">Get Directions</a>
+            </div>
+          </div>
+          <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.967245639886!2d-59.42587668486675!3d13.719050790357535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c43d2efb13d725f%3A0xbc0f2d2d8c5c6df!2sLong%20Bay%2C%20Saint%20Philip%2C%20Barbados!5e0!3m2!1sen!2s!4v1650000000000!5m2!1sen!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+        <div class="contact-form">
+          <h3>Send us a message</h3>
+          <div id="formSuccessMsg" style="display: none;" class="success-msg">✅ Thank you! We'll be in touch.</div>
+          <form id="contactForm">
+            <div class="form-group"><input type="text" id="name" name="name" placeholder="Full Name *"><div id="nameError" class="error-msg"></div></div>
+            <div class="form-group"><input type="tel" id="phone" name="phone" placeholder="Phone Number *"><div id="phoneError" class="error-msg"></div></div>
+            <div class="form-group"><input type="email" id="email" name="email" placeholder="Email *"><div id="emailError" class="error-msg"></div></div>
+            <div class="form-group"><textarea rows="4" id="message" name="message" placeholder="Your message *"></textarea><div id="messageError" class="error-msg"></div></div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h3 style="font-family: 'Playfair Display'; margin-bottom: 16px;">Dis Ole House.</h3>
+        <p>Long Bay, Saint Philip, Barbados</p>
+        <p><i class="fas fa-phone-alt"></i> +1 246-243-0568</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a href="#" data-page="home">Home</a>
+        <a href="#" data-page="about">About</a>
+        <a href="#" data-page="services">Services</a>
+        <a href="#" data-page="contact">Contact</a>
+        <a href="#" data-page="reviews">Reviews</a>
+      </div>
+      <div>
+        <h4>Garden Hours</h4>
+        <p>Mon - Sun: 11am – 10pm</p>
+        <p>Caribbean vibes daily</p>
+      </div>
+    </div>
+    <div class="copyright">
+      © 2026 Dis Ole House Kitchen & Garden Barbados. Authentic Bajan flavors.
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/12462430568" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+  <i class="fab fa-whatsapp"></i>
+</a>
+<a href="tel:+12462430568" class="mobile-sticky-call">
+  <i class="fas fa-phone-alt"></i> Call Us
+</a>
+
+<script>
+  // Page Routing
+  const pages = ['home', 'about', 'services', 'reviews', 'contact'];
+  let currentPage = 'home';
+
+  function showPage(pageId) {
+    // Hide all pages
+    pages.forEach(p => {
+      const el = document.getElementById(`${p}-page`);
+      if (el) el.classList.remove('active-page');
+    });
+    const activePage = document.getElementById(`${pageId}-page`);
+    if (activePage) activePage.classList.add('active-page');
+    currentPage = pageId;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    
+    // Update meta title for SEO
+    const titles = {
+      home: 'Dis Ole House | Authentic Caribbean Dining Barbados',
+      about: 'About Us | Dis Ole House Kitchen & Garden',
+      services: 'Services | Caribbean Dining & Garden Events',
+      reviews: 'Guest Reviews | Dis Ole House Barbados',
+      contact: 'Contact | Reserve Your Table at Dis Ole House'
+    };
+    document.title = titles[pageId] || 'Dis Ole House Kitchen & Garden Barbados';
+  }
+
+  // Event listeners for all navigation links
+  document.querySelectorAll('[data-page]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const page = link.getAttribute('data-page');
+      if (page && pages.includes(page)) {
+        showPage(page);
+        // Close mobile menu if open
+        document.getElementById('navLinks').classList.remove('active');
+        const hamburgerIcon = document.querySelector('#hamburgerBtn i');
+        if (hamburgerIcon) hamburgerIcon.className = 'fas fa-bars';
+      }
+    });
+  });
+
+  // Hamburger menu toggle
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const navLinks = document.getElementById('navLinks');
+  hamburgerBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    const icon = hamburgerBtn.querySelector('i');
+    if (navLinks.classList.contains('active')) {
+      icon.className = 'fas fa-times';
+    } else {
+      icon.className = 'fas fa-bars';
+    }
+  });
+
+  // Contact Form Validation
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      let isValid = true;
+      
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      
+      document.getElementById('nameError').innerText = '';
+      document.getElementById('phoneError').innerText = '';
+      document.getElementById('emailError').innerText = '';
+      document.getElementById('messageError').innerText = '';
+      
+      if (!name) {
+        document.getElementById('nameError').innerText = 'Full name required';
+        isValid = false;
+      }
+      if (!phone) {
+        document.getElementById('phoneError').innerText = 'Phone number required';
+        isValid = false;
+      }
+      if (!email) {
+        document.getElementById('emailError').innerText = 'Email required';
+        isValid = false;
+      } else if (!/^\S+@\S+\.\S+$/.test(email)) {
+        document.getElementById('emailError').innerText = 'Valid email required';
+        isValid = false;
+      }
+      if (!message) {
+        document.getElementById('messageError').innerText = 'Message required';
+        isValid = false;
+      }
+      
+      if (isValid) {
+        const successDiv = document.getElementById('formSuccessMsg');
+        successDiv.style.display = 'block';
+        contactForm.reset();
+        setTimeout(() => {
+          successDiv.style.display = 'none';
+        }, 4000);
+        console.log('Form submitted:', { name, phone, email, message });
+      }
+    });
+  }
+
+  // JSON-LD Schema
+  const script = document.createElement('script');
+  script.type = 'application/ld+json';
+  script.text = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Dis Ole House Kitchen & Garden Barbados",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Long Bay",
+      "addressLocality": "Saint Philip",
+      "addressCountry": "BB"
+    },
+    "telephone": "+12462430568",
+    "servesCuisine": "Caribbean, Bajan, Seafood",
+    "priceRange": "$$",
+    "openingHours": "Mo-Su 11:00-22:00",
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 13.71905,
+      "longitude": -59.42588
+    },
+    "sameAs": "https://maps.app.goo.gl/9pKYzno8QwpPH9di8"
+  });
+  document.head.appendChild(script);
+</script>
+</body>
+</html>
